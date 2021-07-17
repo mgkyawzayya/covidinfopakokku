@@ -15,14 +15,13 @@
                     <div class="flex-1 truncate">
                         <div class="flex items-center space-x-3">
                             <h3 class="text-gray-900 text-sm font-medium truncate">{{ $oxygen->name }}</h3>
-                            
-                                @if ($oxygen->status == 0)
-                                    <span
-                                        class="flex-shrink-0 inline-block px-2 py-0.5 text-red-800 text-xs font-medium bg-red-100 rounded-full">No</span>
-                                @else
-                                    <span
-                                        class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Available</span>
-                                @endif
+                            @if ($oxygen->status == 0)
+                            <span
+                                class="flex-shrink-0 inline-block px-2 py-0.5 text-red-800 text-xs font-medium bg-red-100 rounded-full">No</span>
+                            @else
+                            <span
+                                class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Available</span>
+                            @endif
                         </div>
                         <p class="mt-1 text-gray-500 text-sm truncate">{{ $oxygen->address }}</p>
                     </div>
@@ -30,7 +29,7 @@
                 <div>
                     <div class="-mt-px flex divide-x divide-gray-200">
                         <div class="-ml-px w-0 flex-1 flex">
-                            <a href="tel:+1-202-555-0170"
+                            <a href="tel:{{ $oxygen->phone }}"
                                 class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500">
                                 <svg class="w-5 h-5 text-gray-400" x-description="Heroicon name: solid/phone"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
