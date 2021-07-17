@@ -22,7 +22,7 @@
                 <div>
                     <div class="-mt-px flex divide-x divide-gray-200">
                         <div class="-ml-px w-0 flex-1 flex">
-                            <a href="tel:+1-202-555-0170"
+                            <a href="tel:{{ $volunteer->phone }}"
                                 class="relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-700 font-medium border border-transparent rounded-br-lg hover:text-gray-500">
                                 <svg class="w-5 h-5 text-gray-400" x-description="Heroicon name: solid/phone"
                                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
