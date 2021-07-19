@@ -98,7 +98,7 @@ Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" cl
         <div class="max-w-md mx-auto pt-12 px-4 sm:max-w-7xl sm:px-6 lg:pt-16 lg:px-8">
             <div class="mt-12 border-t border-gray-200 py-8">
                 <p class="text-base text-gray-400 xl:text-center">
-                    © 2021 COVIDInfoPakokku. All rights reserved.
+                    © 2021 PakokkuInfo. All rights reserved.
                 </p>
             </div>
         </div>
