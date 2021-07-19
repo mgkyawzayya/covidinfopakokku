@@ -39,13 +39,17 @@ class OxygenController extends Controller
     {
         $validate = $request->validate([
             'name' => 'required',
-            'phone' => 'required',
+            'firstphone' => 'required',
             'address' => 'required',
         ]);
         if ($request->has('status')) {
             $oxygen = new Oxygen();
             $oxygen->name = $request->name;
-            $oxygen->phone = $request->phone;
+            $oxygen->firstphone = $request->firstphone;
+
+            if ($request->secondphone) {
+                $oxygen->secondphone = $request->secondphone;
+            }
             $oxygen->status = true;
             $oxygen->address = $request->address;
             $oxygen->save();
@@ -87,7 +91,11 @@ class OxygenController extends Controller
      */
     public function update(Request $request, Oxygen $oxygen)
     {
-        $oxygen->update($request->all());
+        if ($request->status == 'on') {
+            $oxygen->update(['name' => $request->name, 'firstphone' => $request->firstphone, 'secondphone' => $request->secondphone, 'status'=> true, 'address' => $request->address]);
+        } else {
+            $oxygen->update(['name' => $request->name, 'firstphone' => $request->firstphone, 'secondphone' => $request->secondphone, 'status'=> false, 'address' => $request->address]);
+        }
         return redirect()->route('oxygen.index')->with('message', 'Oxygen updated successfully');
     }
 

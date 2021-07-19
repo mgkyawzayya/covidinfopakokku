@@ -16,7 +16,8 @@ class CreateOxygensTable extends Migration
         Schema::create('oxygens', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('phone');
+            $table->string('firstphone');
+            $table->string('secondphone')->default(null)->nullable();
             $table->string('address');
             $table->boolean('status')->default(0);
             $table->timestamps();

@@ -39,9 +39,10 @@ class VolunteerController extends Controller
     {
         $validate = $request->validate([
             'name' => 'required',
-            'phone' => 'required',
+            'firstphone' => 'required',
             'address' => 'required',
         ]);
+
         Volunteer::create($request->all());
 
         return redirect()->back()->with('message', 'Volunteer created successfully!');

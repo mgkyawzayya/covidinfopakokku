@@ -66,13 +66,15 @@
                                                         {{ $oxygen->name }}
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                        {{ $oxygen->phone }}
-                                                    </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                        {{ $oxygen->address }}
+                                                        {{ $oxygen->firstphone }} @if ($oxygen->secondphone)
+                                                        {{ ', '. $oxygen->secondphone }}
+                                                        @endif
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                         {{ $oxygen->status }}
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                        {{ $oxygen->address}}
                                                     </td>
                                                     <td
                                                         class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex grid-cols-2">

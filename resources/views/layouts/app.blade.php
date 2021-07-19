@@ -17,30 +17,32 @@
 </head>
 
 <body>
-    <div class="bg-gray-100" style="min-height: 100px;">
+    <div class="bg-gray-100" style="min-height: 50px;">
         <nav x-data="{ open: false }" class="bg-white shadow">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex justify-between h-16">
                     <div class="flex">
                         <div class="flex-shrink-0 flex items-center">
-                            <img class="block lg:hidden h-8 w-auto" src="{{ asset('covidinfopku_square.svg') }}"
-                                alt="Workflow">
-                            <img class="hidden lg:block h-8 w-auto" src="{{ asset('covidinfopku.svg') }}"
-                                alt="Workflow">
+                            <a href="{{ route('index') }}">
+                                <img class="block lg:hidden h-8 w-auto" src="{{ asset('covidinfopku_square.svg') }}"
+                                    alt="Workflow">
+                                <img class="hidden lg:block h-8 w-auto" src="{{ asset('covidinfopku.svg') }}"
+                                    alt="Workflow">
+                            </a>
                         </div>
                         <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
                             <!-- Current: "border-indigo-500 text-gray-900", Default: "border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700" -->
                             <a href="{{ route('index') }}"
                                 class="{{ Request::path() == '/' ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                                Home
+                                ပင်မစာမျက်နှာ
                             </a>
                             <a href="{{ route('emergency-list') }}"
                                 class="{{ Request::path() == 'emergency-list' ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                                Emergency
+                                ပရဟိတအဖွဲ့အစည်းများ
                             </a>
                             <a href="{{ route('donation-list') }}"
                                 class="{{ Request::path() == 'donation-list' ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                                Donation
+                                လှူဒါန်းရန်
                             </a>
                             <a href="#"
                                 class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
