@@ -49,7 +49,7 @@ class BlogController extends Controller
         $blog = new Blog();
         $blog->title = $request->title;
         $blog->category = $request->category;
-        $blog->descriptions = $request->description;
+        $blog->descriptions = $request->descriptions;
         $blog->author_id = $request->user()->id;
         $blog->slug = Str::slug($blog->title);
         if ($request->link) {

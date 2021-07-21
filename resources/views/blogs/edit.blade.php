@@ -34,12 +34,12 @@
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="description" class="sr-only">Description</label>
-                                    <textarea id="mytextarea" name="description" rows="20"
+                                    <label for="descriptions" class="sr-only">Description</label>
+                                    <textarea id="mytextarea" name="descriptions" rows="20"
                                         class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                                        placeholder="Description">{{ $blog->descriptions }}</textarea>
-                                    @error('description')
-                                    <p class="mt-2 text-sm text-red-600">Description required</p>
+                                        placeholder="Descriptions">{{ $blog->descriptions }}</textarea>
+                                    @error('descriptions')
+                                    <p class="mt-2 text-sm text-red-600">Descriptions required</p>
                                     @enderror
                                 </div>
                                 <div>
