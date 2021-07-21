@@ -90,6 +90,7 @@ class BlogController extends Controller
      */
     public function update(Request $request, Blog $blog)
     {
+        // dd($request->all());
         $blog->update($request->all());
         return redirect()->route('blog.index')->with('message', 'Post updated successfully');
     }

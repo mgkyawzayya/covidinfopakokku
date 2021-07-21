@@ -13,6 +13,7 @@
                             <form action="{{ route('blog.update', $blog->id) }}" method="POST"
                                 enctype="multipart/form-data" class="grid grid-cols-1 gap-y-6">
                                 @csrf
+                                @method('PUT')
                                 <div>
                                     <label for="title" class="sr-only">Title</label>
                                     <input type="text" name="title" id="title" autocomplete="title"
