@@ -26,4 +26,4 @@ Route::get('emergency-list', 'EmergencyController@home')->name('emergency-list')
 Route::get('volunteer-list', 'VolunteerController@home')->name('volunteer-list');
 Route::get('donation-list', 'DonationController@home')->name('donation-list');
 Route::get('blog-list', 'BlogController@home')->name('blog-list');
-Route::get('blog-details/{slug}', 'BlogController@details')->name('blog-details');
+Route::get('blogs/{slug}', 'BlogController@details')->name('blogs');
