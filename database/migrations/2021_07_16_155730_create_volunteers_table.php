@@ -18,7 +18,7 @@ class CreateVolunteersTable extends Migration
             $table->string('name');
             $table->string('firstphone');
             $table->string('secondphone')->default(null)->nullable();
-            $table->string('path')->nullable();
+            $table->string('path')->default(null)->nullable();
             $table->string('address');
             $table->timestamps();
         });

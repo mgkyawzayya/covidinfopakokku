@@ -38,16 +38,6 @@
                                         value="{{ old('secondphone') }}" placeholder="Second Phone">
                                 </div>
                                 <div>
-                                    <div>
-                                        <label for="image" class="block text-sm font-medium text-gray-700">Photo</label>
-                                        <input type="file" name="image" id="image"
-                                            class="block w-full shadow-sm py-4 px-4 focus:border-indigo-500 border-gray-300 rounded-md">
-                                        @error('image')
-                                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div>
                                     <label for="address" class="sr-only">Address</label>
                                     <textarea id="address" name="address" rows="4"
                                         class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"

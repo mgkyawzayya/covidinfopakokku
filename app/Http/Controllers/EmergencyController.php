@@ -106,7 +106,8 @@ class EmergencyController extends Controller
      */
     public function destroy(Emergency $emergency)
     {
-        //
+        $emergency->delete();
+        return redirect()->route('emergency.index')->with('message', 'Emergency deleted successfully');
     }
 
     public function home()

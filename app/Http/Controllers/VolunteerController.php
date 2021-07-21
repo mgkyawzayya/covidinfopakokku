@@ -41,17 +41,17 @@ class VolunteerController extends Controller
             'name' => 'required',
             'firstphone' => 'required',
             'address' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            // 'image' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
 
         $volunteer = new Volunteer();
-        if ($request->file('image')) {
-            $imagePath = $request->file('image');
-            $imageName = time() . '.' . $imagePath->getClientOriginalExtension();
-            $path = $request->file('image')->storeAs('uploads', $imageName, 'public');
+        // if ($request->file('image')) {
+        //     $imagePath = $request->file('image');
+        //     $imageName = time() . '.' . $imagePath->getClientOriginalExtension();
+        //     $path = $request->file('image')->storeAs('uploads', $imageName, 'public');
 
-            $volunteer->path = '/storage/'. $path;
-        }
+        //     $volunteer->path = '/storage/'. $path;
+        // }
 
         $volunteer->name = $request->name;
         $volunteer->firstphone = $request->firstphone;
