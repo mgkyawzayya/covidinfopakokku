@@ -10,7 +10,7 @@
     <div class="bg-gray-100">
         <div class="max-w-7xl mx-auto py-10 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase">သတင်းများ</h2>
+                <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase pyidaungsu">သတင်းများ</h2>
             </div>
         </div>
     </div>
@@ -26,7 +26,7 @@
                         <div class="flex-1">
                             <p class="text-sm font-medium text-indigo-600">
                                 <span
-                                    class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
+                                    class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 pyidaungsu">
                                     @if ($blog->category === 'knowledge')
                                     ဗဟုသုတ
                                     @elseif($blog->category === 'new')
