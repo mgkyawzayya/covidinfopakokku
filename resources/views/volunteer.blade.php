@@ -28,7 +28,11 @@
                         <div class="flex items-center space-x-3">
                             <h3 class="text-gray-900 text-sm font-medium break-words">{{ $volunteer->name }}</h3>
                         </div>
-                        <p class="mt-1 text-gray-500 text-sm break-words">{{ $volunteer->address }}</p>
+                        <p class="mt-1 pb-2 text-gray-500 text-sm break-words">{{ $volunteer->address }}</p>
+                        @if ($volunteer->descriptions)
+                        <hr>
+                        <p class="pt-2 text-gray-500 text- break-words">{{ $volunteer->descriptions }}</p>
+                        @endif
                     </div>
                 </div>
                 <div>

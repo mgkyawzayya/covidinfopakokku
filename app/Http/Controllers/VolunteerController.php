@@ -58,6 +58,9 @@ class VolunteerController extends Controller
         if ($request->secondphone) {
             $volunteer->secondphone = $request->secondphone;
         }
+        if ($request->descriptions) {
+            $volunteer->descriptions = $request->descriptions;
+        }
         $volunteer->address = $request->address;
         $volunteer->save();
 
