@@ -10,7 +10,8 @@
     <div class="bg-gray-100">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase pyidaungsu mb-2">ပင်မစာမျက်နှာ
+                <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase pyidaungsu mb-2">
+                    ပင်မစာမျက်နှာ
                 </h2>
                 <p
                     class="mt-3 text-xl font-extrabold text-gray-900 sm:text-1xl sm:tracking-tight lg:text-2xl pyidaungsu">
@@ -27,19 +28,19 @@
             <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
                 <div class="w-full flex items-center justify-between p-6 space-x-6">
                     <div class="flex-1 truncate">
-                        <div class="flex items-center space-x-3">
+                        @if ($oxygen->status == 0)
+                        <span
+                            class="flex-shrink-0 inline-block px-2 py-0.5 text-red-800 text-xs font-medium bg-red-100 rounded-full">Not
+                            Available</span>
+                        @else
+                        <span
+                            class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Available</span>
+                        @endif
+                        <div class="flex items-center space-x-3 pt-2">
                             <h3 class="text-gray-900 text-base font-medium break-words pyidaungsu">{{ $oxygen->name }}
                             </h3>
-                            @if ($oxygen->status == 0)
-                            <span
-                                class="flex-shrink-0 inline-block px-2 py-0.5 text-red-800 text-xs font-medium bg-red-100 rounded-full">Not
-                                Available</span>
-                            @else
-                            <span
-                                class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Available</span>
-                            @endif
                         </div>
-                        <p class="mt-1 pb-2 text-gray-600 text-base break-words pyidaungsu">{{ $oxygen->address }}</p>
+                        <p class="mt-1 pb-3 text-gray-600 text-base break-words pyidaungsu">{{ $oxygen->address }}</p>
                         @if ($oxygen->descriptions)
                         <hr>
                         <p class="pt-2 text-gray-500 text-sm break-words pyidaungsu">{{ $oxygen->descriptions }}</p>
