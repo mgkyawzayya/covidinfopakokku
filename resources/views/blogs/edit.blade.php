@@ -26,11 +26,9 @@
                                         <select id="category" name="category"
                                             class="mt-1 block w-1/4 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
                                             <option {{ $blog->category == 'knowledge' ? 'selected' : '' }}
-                                                value="knowledge">Knowledge</option>
-                                            <option {{ $blog->category == 'hello' ? 'selected' : '' }} value="hello">
-                                                Hello</option>
-                                            <option {{ $blog->category == 'testing' ? 'selected' : '' }}
-                                                value="testing">Testing</option>
+                                                value="knowledge">ဗဟုသုတ</option>
+                                            <option {{ $blog->category == 'new' ? 'selected' : '' }} value="new">
+                                                သတင်း</option>
                                         </select>
                                     </div>
                                 </div>
@@ -38,7 +36,7 @@
                                     <label for="description" class="sr-only">Description</label>
                                     <textarea id="mytextarea" name="description" rows="20"
                                         class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                                        placeholder="Description">{{ old('description') }}</textarea>
+                                        placeholder="Description">{{ $blog->descriptions }}</textarea>
                                     @error('description')
                                     <p class="mt-2 text-sm text-red-600">Description required</p>
                                     @enderror

@@ -27,7 +27,12 @@
                             <p class="text-sm font-medium text-indigo-600">
                                 <span
                                     class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800">
-                                    {{ $blog->category }}
+                                    @if ($blog->category === 'knowledge')
+                                    ဗဟုသုတ
+                                    @elseif($blog->category === 'new')
+                                    သတင်း
+                                    @else
+                                    @endif
                                 </span>
                             </p>
                             <a href="blog-details/{{ $blog->slug }}" class="block mt-2">

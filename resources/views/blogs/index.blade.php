@@ -41,6 +41,10 @@
                                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                         Author
                                                     </th>
+                                                    <th scope="col"
+                                                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                                        Category
+                                                    </th>
                                                     <th scope="col" class="relative px-6 py-3">
                                                         <span class="sr-only">Edit</span>
                                                     </th>
@@ -59,6 +63,9 @@
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                                                         {{ $blog->author->name }}
+                                                    </td>
+                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                        {{ $blog->category }}
                                                     </td>
                                                     <td
                                                         class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex grid-cols-2">
@@ -97,6 +104,7 @@
                         </div>
                     </div>
                 </div>
+                {{ $blogs->links('vendor.pagination.simple-tailwind') }}
                 @if(session()->has('message'))
                 <div class="bg-white">
                     <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">

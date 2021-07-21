@@ -11,9 +11,10 @@
         <div class="text-lg max-w-prose mx-auto">
             <h1>
                 <span
-                    class="mt-2 block text-3xl text-center leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl pyidaungsu">{{$blog->title}}</span>
+                    class="mt-2 block text-2xl text-center leading-loose font-extrabold tracking-wide text-gray-900 sm:text-2xl pyidaungsu">{{$blog->title}}</span>
             </h1>
-            <p class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto pyidaungsu">{!! $blog->descriptions !!}</p>
+            <p class="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto pyidaungsu leading-relaxed">{!!
+                $blog->descriptions !!}</p>
         </div>
     </div>
 </div>
