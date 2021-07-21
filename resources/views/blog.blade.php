@@ -62,7 +62,7 @@
                                         ·
                                     </span>
                                     <span>
-                                        6 min read
+                                        {{ (new Mtownsend\ReadTime\ReadTime(strip_tags($blog->descriptions)))->get() }}
                                     </span>
                                 </div>
                             </div>

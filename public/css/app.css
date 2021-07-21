@@ -33867,6 +33867,10 @@ select {
   content: none;
 }
 
+.pyidaungsu {
+  font-family: Pyidaungsu;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;

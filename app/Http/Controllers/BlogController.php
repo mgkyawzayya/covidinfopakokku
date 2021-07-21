@@ -6,6 +6,7 @@ use App\Blog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Mtownsend\ReadTime\ReadTime;
 
 class BlogController extends Controller
 {
