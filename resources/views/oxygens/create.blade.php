@@ -41,12 +41,21 @@
                                     <input type="checkbox" name="status" id="status" class="h-6 w-6 rounded-md">
                                 </div>
                                 <div>
+                                    <label for="descriptions" class="sr-only">Descriptions</label>
+                                    <textarea id="descriptions" name="descriptions" rows="1"
+                                        class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
+                                        placeholder="Descriptions"></textarea>
+                                    @error('descriptions')
+                                    <p class="mt-2 text-sm text-red-600">Descriptions required</p>
+                                    @enderror
+                                </div>
+                                <div>
                                     <label for="address" class="sr-only">Address</label>
                                     <textarea id="address" name="address" rows="4"
                                         class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
                                         placeholder="Address"></textarea>
                                     @error('address')
-                                    <p class="mt-2 text-sm text-red-600">Addres required</p>
+                                    <p class="mt-2 text-sm text-red-600">Address required</p>
                                     @enderror
                                 </div>
                                 <div>

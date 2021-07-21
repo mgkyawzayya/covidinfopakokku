@@ -49,7 +49,6 @@ class OxygenController extends Controller
             if ($oxygen->descriptions) {
                 $oxygen->descriptions = $request->descriptions;
             }
-
             if ($request->secondphone) {
                 $oxygen->secondphone = $request->secondphone;
             }
@@ -59,7 +58,6 @@ class OxygenController extends Controller
         } else {
             Oxygen::create($request->all());
         }
-
         return redirect()->back()->with('message', 'Oxygen created successfully!');
     }
 
@@ -95,9 +93,9 @@ class OxygenController extends Controller
     public function update(Request $request, Oxygen $oxygen)
     {
         if ($request->status == 'on') {
-            $oxygen->update(['name' => $request->name, 'firstphone' => $request->firstphone, 'secondphone' => $request->secondphone, 'status'=> true, 'address' => $request->address]);
+            $oxygen->update(['name' => $request->name, 'firstphone' => $request->firstphone, 'secondphone' => $request->secondphone, 'status'=> true, 'descriptions' => $request->descriptions, 'address' => $request->address]);
         } else {
-            $oxygen->update(['name' => $request->name, 'firstphone' => $request->firstphone, 'secondphone' => $request->secondphone, 'status'=> false, 'address' => $request->address]);
+            $oxygen->update(['name' => $request->name, 'firstphone' => $request->firstphone, 'secondphone' => $request->secondphone, 'status'=> false, 'descriptions' => $request->descriptions, 'address' => $request->address]);
         }
         return redirect()->route('oxygen.index')->with('message', 'Oxygen updated successfully');
     }
