@@ -28,7 +28,7 @@
                         <div class="flex items-center space-x-3">
                             <h3 class="text-gray-900 text-sm font-medium truncate">{{ $volunteer->name }}</h3>
                         </div>
-                        <p class="mt-1 text-gray-500 text-sm truncate">{{ $volunteer->address }}</p>
+                        <p class="mt-1 text-gray-500 text-sm truncate break-words">{{ $volunteer->address }}</p>
                     </div>
                 </div>
                 <div>

@@ -36,7 +36,7 @@
                                 class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Available</span>
                             @endif
                         </div>
-                        <p class="mt-1 text-gray-500 text-sm truncate">{{ $oxygen->address }}</p>
+                        <p class="mt-1 text-gray-500 text-sm truncate break-words">{{ $oxygen->address }}</p>
                     </div>
                 </div>
                 <div>

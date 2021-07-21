@@ -27,7 +27,7 @@
                     <img class="w-48 h-48 flex-shrink-0 mx-auto bg-black rounded-full"
                         src="{{ asset($emergency->path) }}" alt="">
                     <h3 class="mt-6 text-gray-900 text-sm font-medium">{{ $emergency->name }}</h3>
-                    <p class="mt-1 text-gray-500 text-sm truncate">{{ $emergency->address }}</p>
+                    <p class="mt-1 text-gray-500 text-sm truncate break-words">{{ $emergency->address }}</p>
                 </div>
                 <div>
                     <div class="-mt-px flex divide-x divide-gray-200">
