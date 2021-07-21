@@ -14,7 +14,9 @@ class EmergencyController extends Controller
      */
     public function index()
     {
-        //
+        $emergencies = Emergency::all();
+        $id = 1;
+        return view('emergencies.index', compact('emergencies'))->with('id', $id);
     }
 
     /**
@@ -24,7 +26,7 @@ class EmergencyController extends Controller
      */
     public function create()
     {
-        //
+        return view('emergencies.create');
     }
 
     /**
@@ -35,7 +37,31 @@ class EmergencyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'firstphone' => 'required',
+            'address' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
+        ]);
+
+        $volunteer = new Emergency();
+        if ($request->file('image')) {
+            $imagePath = $request->file('image');
+            $imageName = time() . '.' . $imagePath->getClientOriginalExtension();
+            $path = $request->file('image')->storeAs('uploads', $imageName, 'public');
+
+            $volunteer->path = '/storage/'. $path;
+        }
+
+        $volunteer->name = $request->name;
+        $volunteer->firstphone = $request->firstphone;
+        if ($request->secondphone) {
+            $volunteer->secondphone = $request->secondphone;
+        }
+        $volunteer->address = $request->address;
+        $volunteer->save();
+
+        return redirect()->back()->with('message', 'Emergency created successfully!');
     }
 
     /**
@@ -81,5 +107,12 @@ class EmergencyController extends Controller
     public function destroy(Emergency $emergency)
     {
         //
+    }
+
+    public function home()
+    {
+        $emergencies = Emergency::all();
+
+        return view('emergency', compact('emergencies'));
     }
 }

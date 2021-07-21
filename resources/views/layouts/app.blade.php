@@ -12,6 +12,7 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <!-- Fonts -->
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href='https://mmwebfonts.comquas.com/fonts/?font=pyidaungsu' />
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -36,6 +37,10 @@
                                 class="{{ Request::path() == '/' ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                 ပင်မစာမျက်နှာ
                             </a>
+                            <a href="{{ route('volunteer-list') }}"
+                                class="{{ Request::path() == 'volunteer-list' ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                စေတနာ့ဝန်ထမ်းများ
+                            </a>
                             <a href="{{ route('emergency-list') }}"
                                 class="{{ Request::path() == 'emergency-list' ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                 ပရဟိတအဖွဲ့အစည်းများ
@@ -43,6 +48,10 @@
                             <a href="{{ route('donation-list') }}"
                                 class="{{ Request::path() == 'donation-list' ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                 လှူဒါန်းရန်
+                            </a>
+                            <a href="{{ route('blog-list') }}"
+                                class="{{ Request::path() == 'blog-list' || Request::is('blog-details/*') ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                သတင်းများ
                             </a>
                             <a href="#"
                                 class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
@@ -81,11 +90,15 @@ Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" cl
                 <div class="pt-2 pb-3 space-y-1">
                     <!-- Current: "bg-indigo-50 border-indigo-500 text-indigo-700", Default: "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700" -->
                     <a href="{{ route('index') }}"
-                        class="{{ Request::path() == '/' ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
+                        class="{{ Request::path() == '/' ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">ပင်မစာမျက်နှာ</a>
+                    <a href="{{ route('volunteer-list') }}"
+                        class="{{ Request::path() == 'volunteer-list' ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">စေတနာ့ဝန်ထမ်းများ</a>
                     <a href="{{ route('emergency-list') }}"
-                        class="{{ Request::path() == 'emergency-list' ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Emergency</a>
+                        class="{{ Request::path() == 'emergency-list' ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">ပရဟိတအဖွဲ့အစည်းများ</a>
                     <a href="{{ route('donation-list') }}"
-                        class="{{ Request::path() == 'donation-list' ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Donation</a>
+                        class="{{ Request::path() == 'donation-list' ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">လှူဒါန်းရန်</a>
+                    <a href="{{ route('blog-list') }}"
+                        class="{{ Request::path() == 'blog-list' ||Request::is('blog-details/*') ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">သတင်းများ</a>
                     <a href="#"
                         class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">About</a>
                 </div>

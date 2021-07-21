@@ -15,10 +15,15 @@ class CreateBlogsTable extends Migration
     {
         Schema::create('blogs', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title');
-            $table->string('author');
+            $table->string('title')->unique();
+            $table->string('category');
+            $table->unsignedBigInteger('author_id');
+            $table->foreign('author_id')
+        ->references('id')->on('users')
+        ->onDelete('cascade');
             $table->longText('descriptions');
-            $table->string('link');
+            $table->string('link')->nullable();
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

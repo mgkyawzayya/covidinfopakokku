@@ -18,6 +18,7 @@ class CreateOxygensTable extends Migration
             $table->string('name');
             $table->string('firstphone');
             $table->string('secondphone')->default(null)->nullable();
+            $table->string('description');
             $table->string('address');
             $table->boolean('status')->default(0);
             $table->timestamps();

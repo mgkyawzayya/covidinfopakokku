@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
@@ -14,7 +16,9 @@ class BlogController extends Controller
      */
     public function index()
     {
-        //
+        $blogs = Blog::all();
+        $id = 1;
+        return view('blogs.index', compact('blogs'))->with('id', $id);
     }
 
     /**
@@ -24,7 +28,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
+        return view('blogs.create');
     }
 
     /**
@@ -35,7 +39,23 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validation = $request->validate([
+            'title' => 'required',
+            'category' => 'required',
+            'description' => 'required'
+        ]);
+
+        $blog = new Blog();
+        $blog->title = $request->title;
+        $blog->category = $request->category;
+        $blog->descriptions = $request->description;
+        $blog->author_id = $request->user()->id;
+        $blog->slug = Str::slug($blog->title);
+        if ($request->link) {
+            $blog->link = $request->link;
+        }
+        $blog->save();
+        return redirect()->back()->with('message', 'Post created successfully!');
     }
 
     /**
@@ -85,7 +105,13 @@ class BlogController extends Controller
 
     public function home()
     {
-        $blogs = Blog::all();
+        $blogs = Blog::paginate(5);
         return view('blog', compact('blogs'));
+    }
+
+    public function details($slug)
+    {
+        $blog = Blog::where('slug', $slug)->first();
+        return view('blog-details', compact('blog'));
     }
 }

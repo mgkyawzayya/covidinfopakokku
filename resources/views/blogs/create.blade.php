@@ -10,50 +10,37 @@
                 <div class="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
                     <div class="bg-white py-16 px-4 sm:px-6 lg:col-span-5 lg:py-24 lg:px-8 xl:pl-12">
                         <div class="max-w-lg mx-auto lg:max-w-none">
-                            <form action="{{ route('volunteer.store') }}" method="POST" enctype="multipart/form-data"
+                            <form action="{{ route('blog.store') }}" method="POST" enctype="multipart/form-data"
                                 class="grid grid-cols-1 gap-y-6">
                                 @csrf
                                 <div>
-                                    <label for="name" class="sr-only">Full name</label>
-                                    <input type="text" name="name" id="name" autocomplete="name"
+                                    <label for="title" class="sr-only">Title</label>
+                                    <input type="text" name="title" id="title" autocomplete="title"
                                         class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                                        value="{{ old('name') }}" placeholder="Name">
-                                    @error('name')
-                                    <p class="mt-2 text-sm text-red-600">Name required</p>
+                                        value="{{ old('title') }}" placeholder="Title">
+                                    @error('title')
+                                    <p class="mt-2 text-sm text-red-600">Title required</p>
                                     @enderror
-                                </div>
-                                <div>
-                                    <label for="firstphone" class="sr-only">First Phone One</label>
-                                    <input type="text" name="firstphone" id="frstphone" autocomplete="tel"
-                                        class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                                        value="{{ old('firstphone') }}" placeholder="First Phone">
-                                    @error('firstphone')
-                                    <p class="mt-2 text-sm text-red-600">Phone Number required</p>
-                                    @enderror
-                                </div>
-                                <div>
-                                    <label for="secondphone" class="sr-only">Second Phone</label>
-                                    <input type="text" name="secondphone" id="secondphone" autocomplete="tel"
-                                        class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                                        value="{{ old('secondphone') }}" placeholder="Second Phone">
                                 </div>
                                 <div>
                                     <div>
-                                        <label for="image" class="block text-sm font-medium text-gray-700">Photo</label>
-                                        <input type="file" name="image" id="image"
-                                            class="block w-full shadow-sm py-4 px-4 focus:border-indigo-500 border-gray-300 rounded-md">
-                                        @error('image')
-                                        <p class="mt-2 text-sm text-red-600">{{ $message }}</p>
-                                        @enderror
+                                        <label for="category"
+                                            class="block text-sm font-medium text-gray-700 ">Category</label>
+                                        <select id="category" name="category"
+                                            class="mt-1 block w-1/4 pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+                                            <option selected value="knowledge">Knowledge</option>
+                                            <option  value="hello">Hello</option>
+                                            <option  value="testing">Testing</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div>
-                                    <label for="address" class="sr-only">Address</label>
-                                    <textarea id="address" name="address" rows="4"
+                                    <label for="description" class="sr-only">Description</label>
+                                    <textarea id="mytextarea" name="description" rows="20"
                                         class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                                        placeholder="Address">{{ old('address') }}</textarea>
-                                    @error('address')
-                                    <p class="mt-2 text-sm text-red-600">Addres required</p>
+                                        placeholder="Description">{{ old('description') }}</textarea>
+                                    @error('description')
+                                    <p class="mt-2 text-sm text-red-600">Description required</p>
                                     @enderror
                                 </div>
                                 <div>

@@ -37,13 +37,29 @@ class VolunteerController extends Controller
      */
     public function store(Request $request)
     {
-        $validate = $request->validate([
+        $request->validate([
             'name' => 'required',
             'firstphone' => 'required',
             'address' => 'required',
+            'image' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
 
-        Volunteer::create($request->all());
+        $volunteer = new Volunteer();
+        if ($request->file('image')) {
+            $imagePath = $request->file('image');
+            $imageName = time() . '.' . $imagePath->getClientOriginalExtension();
+            $path = $request->file('image')->storeAs('uploads', $imageName, 'public');
+
+            $volunteer->path = '/storage/'. $path;
+        }
+
+        $volunteer->name = $request->name;
+        $volunteer->firstphone = $request->firstphone;
+        if ($request->secondphone) {
+            $volunteer->secondphone = $request->secondphone;
+        }
+        $volunteer->address = $request->address;
+        $volunteer->save();
 
         return redirect()->back()->with('message', 'Volunteer created successfully!');
     }

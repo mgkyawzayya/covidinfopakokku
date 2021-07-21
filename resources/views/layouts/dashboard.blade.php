@@ -14,6 +14,17 @@
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script src='https://cdn.tiny.cloud/1/0otnexgg0jyj0aii5vw3trw3secf46cre5l59vsk2jhyrxed/tinymce/5/tinymce.min.js'
+        referrerpolicy="origin">
+    </script>
+    <script>
+        tinymce.init({
+          selector: '#mytextarea',
+        //   plugins: 'advlist link image lists'
+        plugins: 'advlist autolink link lists charmap print preview hr anchor pagebreak searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime nonbreaking table emoticons paste help',
+
+        });
+    </script>
 </head>
 
 <body>
@@ -65,7 +76,7 @@
                         </div>
                         <nav class="mt-5 px-2 space-y-1">
                             <a href="{{ route('home') }}"
-                                class="{{ Request::path() == 'home' ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}} group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                                class="{{ Request::is('home')  ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}} group flex items-center px-2 py-2 text-base font-medium rounded-md"
                                 x-state:on="Current" x-state:off="Default"
                                 x-state-description="Current: &quot;bg-gray-100 text-gray-900&quot;, Default: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                 <svg class="text-gray-500 mr-4 flex-shrink-0 h-6 w-6" x-state:on="Current"
@@ -81,7 +92,7 @@
                             </a>
                             @can('isAdmin')
                             <a href={{ route('user.index') }}#"
-                                class="{{ Request::path() == 'user' || Request::path() == 'user/create' ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}} group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                                class="{{ Request::is('user/*')  ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}} group flex items-center px-2 py-2 text-base font-medium rounded-md"
                                 x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                 <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6"
                                     x-state-description="undefined: &quot;text-gray-500&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-500&quot;"
@@ -95,7 +106,7 @@
                             </a>
                             @endcan
                             <a href="{{ route('volunteer.index') }}"
-                                class="{{ Request::path() == 'volunteer' || Request::path() == 'volunteer/create' ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}} group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                                class="{{ Request::is('volunteer/*') ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}} group flex items-center px-2 py-2 text-base font-medium rounded-md"
                                 x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                 <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6"
                                     x-state-description="undefined: &quot;text-gray-500&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-500&quot;"
@@ -107,8 +118,21 @@
                                 </svg>
                                 Volunteers
                             </a>
+                            <a href="{{ route('emergency.index') }}"
+                                class="{{ Request::is('emergency/*')  ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}} group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                                x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                                <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6"
+                                    x-state-description="undefined: &quot;text-gray-500&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-500&quot;"
+                                    x-description="Heroicon name: outline/folder" xmlns="http://www.w3.org/2000/svg"
+                                    fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                                    </path>
+                                </svg>
+                                Emergencies
+                            </a>
                             <a href="{{  route('donation.index') }}"
-                                class="{{ Request::path() == 'donation' || Request::path() == 'donation/create' ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}}group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                                class="{{ Request::is('donation/*')  ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}}group flex items-center px-2 py-2 text-base font-medium rounded-md"
                                 x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                 <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6"
                                     x-state-description="undefined: &quot;text-gray-500&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-500&quot;"
@@ -121,7 +145,7 @@
                                 Donations
                             </a>
                             <a href="{{ route('oxygen.index') }}"
-                                class="{{ Request::path() == 'oxygen' || Request::path() == 'oxygen/create' ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}} group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                                class="{{ Request::is('oxygen/*')  ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}} group flex items-center px-2 py-2 text-base font-medium rounded-md"
                                 x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                 <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6"
                                     x-state-description="undefined: &quot;text-gray-500&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-500&quot;"
@@ -133,8 +157,8 @@
                                 </svg>
                                 Oxygens
                             </a>
-                            <a href="#"
-                                class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-base font-medium rounded-md"
+                            <a href="{{ route('blog.index') }}"
+                                class="{{ Request::is('blog/*')  ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}} group flex items-center px-2 py-2 text-base font-medium rounded-md"
                                 x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                 <svg class="text-gray-400 group-hover:text-gray-500 mr-4 flex-shrink-0 h-6 w-6"
                                     x-state-description="undefined: &quot;text-gray-500&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-500&quot;"
@@ -197,7 +221,7 @@
                                 </a>
                                 @can('isAdmin')
                                 <a href="{{ route('user.index') }}"
-                                    class="{{ Request::path() ==  'user' || Request::path() == 'user/create' ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'  }}group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                                    class="{{ Request::is('user/*') ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'  }}group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                                     x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6"
                                         x-state-description="undefined: &quot;text-gray-500&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-500&quot;"
@@ -211,7 +235,7 @@
                                 </a>
                                 @endcan
                                 <a href="{{ route('volunteer.index') }}"
-                                    class="{{ Request::path() ==  'volunteer' || Request::path() == 'volunteer/create' ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                                    class="{{ Request::is('volunteer/*') ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                                     x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6"
                                         x-state-description="undefined: &quot;text-gray-500&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-500&quot;"
@@ -223,8 +247,21 @@
                                     </svg>
                                     Volunteers
                                 </a>
+                                <a href="{{ route('emergency.index') }}"
+                                    class="{{ Request::is('emergency/*') ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900' }} group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                                    x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
+                                    <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6"
+                                        x-state-description="undefined: &quot;text-gray-500&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-500&quot;"
+                                        x-description="Heroicon name: outline/folder" xmlns="http://www.w3.org/2000/svg"
+                                        fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9">
+                                        </path>
+                                    </svg>
+                                    Emergencies
+                                </a>
                                 <a href="{{ route('donation.index') }}"
-                                    class="{{ Request::path() ==  'donation'  ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'  }} group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                                    class="{{ Request::is('donation/*')  ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'  }} group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                                     x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6"
                                         x-state-description="undefined: &quot;text-gray-500&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-500&quot;"
@@ -238,7 +275,7 @@
                                     Donations
                                 </a>
                                 <a href="{{ route('oxygen.index') }}"
-                                    class="{{ Request::path() ==  'oxygen' || Request::path() ==  'oxygen/create' ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'  }} group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                                    class="{{ Request::is('oxygen/*') ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'  }} group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                                     x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6"
                                         x-state-description="undefined: &quot;text-gray-500&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-500&quot;"
@@ -250,8 +287,8 @@
                                     </svg>
                                     Oxygens
                                 </a>
-                                <a href="#"
-                                    class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+                                <a href="{{  route('blog.index') }}"
+                                    class="{{ Request::is('blog/*')  ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'  }}group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                                     x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
                                     <svg class="text-gray-400 group-hover:text-gray-500 mr-3 flex-shrink-0 h-6 w-6"
                                         x-state-description="undefined: &quot;text-gray-500&quot;, undefined: &quot;text-gray-400 group-hover:text-gray-500&quot;"

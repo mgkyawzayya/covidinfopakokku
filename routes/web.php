@@ -20,6 +20,10 @@ Route::middleware(['auth' ])->group(function () {
     Route::resource('oxygen', 'OxygenController');
     Route::resource('donation', 'DonationController');
     Route::resource('emergency', 'EmergencyController');
+    Route::resource('blog', 'BlogController');
 });
-Route::get('emergency-list', 'VolunteerController@home')->name('emergency-list');
+Route::get('emergency-list', 'EmergencyController@home')->name('emergency-list');
+Route::get('volunteer-list', 'VolunteerController@home')->name('volunteer-list');
 Route::get('donation-list', 'DonationController@home')->name('donation-list');
+Route::get('blog-list', 'BlogController@home')->name('blog-list');
+Route::get('blog-details/{slug}', 'BlogController@details')->name('blog-details');

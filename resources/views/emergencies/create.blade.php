@@ -10,7 +10,7 @@
                 <div class="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
                     <div class="bg-white py-16 px-4 sm:px-6 lg:col-span-5 lg:py-24 lg:px-8 xl:pl-12">
                         <div class="max-w-lg mx-auto lg:max-w-none">
-                            <form action="{{ route('volunteer.store') }}" method="POST" enctype="multipart/form-data"
+                            <form action="{{ route('emergency.store') }}" method="POST" enctype="multipart/form-data"
                                 class="grid grid-cols-1 gap-y-6">
                                 @csrf
                                 <div>
