@@ -75,7 +75,7 @@
                     </div>
                 </div>
                 @endforeach
-            </div>{{ $blogs->links('vendor.pagination.simple-tailwind') }}
+            </div>{{ $blogs->links('vendor.pagination.tailwind') }}
         </div>
     </div>
 </div>
