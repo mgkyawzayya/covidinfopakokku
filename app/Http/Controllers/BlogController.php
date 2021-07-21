@@ -116,6 +116,10 @@ class BlogController extends Controller
     public function details($slug)
     {
         $blog = Blog::where('slug', $slug)->first();
-        return view('blog-details', compact('blog'));
+        if ($blog) {
+            return view('blog-details', compact('blog'));
+        } else {
+            abort(404);
+        }
     }
 }
