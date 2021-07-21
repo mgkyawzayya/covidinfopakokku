@@ -39,10 +39,19 @@ class DonationController extends Controller
     {
         $validate = $request->validate([
             'name' => 'required',
-            'phone' => 'required',
+            'firstphone' => 'required',
             'address' => 'required',
         ]);
-        Donation::create($request->all());
+        $donation = new Donation();
+        $donation->name = $request->name;
+        $donation->firstphone = $request->firstphone;
+        if ($request->secondphone) {
+            $donation->secondphone = $request->secondphone;
+        }
+        $donation->address = $request->address;
+        $donation->save();
+
+        // Donation::create($request->all());
 
         return redirect()->back()->with('message', 'Donation created successfully!');
     }

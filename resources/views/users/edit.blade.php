@@ -28,7 +28,7 @@
                                 </div>
                                 <div>
                                     <label for="password" class="sr-only">Password</label>
-                                    <input type="password" name="password" id="password" autocomplete="password"
+                                    <input type="password" name="password" id="password" autocomplete="password" placeholder="New Password"
                                         class="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md">
                                 </div>
                                 <div>

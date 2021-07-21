@@ -8,10 +8,8 @@
 -->
 <div class="bg-white">
     <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        @can('isAdmin')
         <div>
-            <h3 class="text-lg leading-6 font-medium text-gray-900">
-                Last 30 days
-            </h3>
             <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 <div class="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
                     <dt>
@@ -32,7 +30,7 @@
                         </p>
                         <div class="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
                             <div class="text-sm">
-                                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> View all<span
+                                <a href="{{ route('volunteer.index') }}" class="font-medium text-indigo-600 hover:text-indigo-500"> View all<span
                                         class="sr-only"> </span></a>
                             </div>
                         </div>
@@ -57,7 +55,7 @@
                         </p>
                         <div class="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
                             <div class="text-sm">
-                                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> View all<span
+                                <a href="{{ route('donation.index') }}" class="font-medium text-indigo-600 hover:text-indigo-500"> View all<span
                                         class="sr-only"> </span></a>
                             </div>
                         </div>
@@ -82,8 +80,9 @@
                         </p>
                         <div class="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
                             <div class="text-sm">
-                                <a href="{{ route('oxygen.index') }}" class="font-medium text-indigo-600 hover:text-indigo-500"> View all<span
-                                        class="sr-only">
+                                <a href="{{ route('oxygen.index') }}"
+                                    class="font-medium text-indigo-600 hover:text-indigo-500">
+                                    View all<span class="sr-only">
                                     </span></a>
                             </div>
                         </div>
@@ -91,6 +90,38 @@
                 </div>
             </dl>
         </div>
+        @endcan
+        @can('isEditor')
+        <div>
+            <dl class="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="relative bg-white pt-5 px-4 pb-12 sm:pt-6 sm:px-6 shadow rounded-lg overflow-hidden">
+                    <dt>
+                        <div class="absolute bg-indigo-500 rounded-md p-3">
+                            <svg class="h-6 w-6 text-white" x-description="Heroicon name: outline/mail-open"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+                                aria-hidden="true">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z">
+                                </path>
+                            </svg>
+                        </div>
+                        <p class="ml-16 text-sm font-medium text-gray-500 truncate">Total Posts</p>
+                    </dt>
+                    <dd class="ml-16 pb-6 flex items-baseline sm:pb-7">
+                        <p class="text-2xl font-semibold text-gray-900">
+                            {{ $posts }}
+                        </p>
+                        <div class="absolute bottom-0 inset-x-0 bg-gray-50 px-4 py-4 sm:px-6">
+                            <div class="text-sm">
+                                <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> View all<span
+                                        class="sr-only"> </span></a>
+                            </div>
+                        </div>
+                    </dd>
+                </div>
+            </dl>
+        </div>
+        @endcan
     </div>
 </div>
 @endsection

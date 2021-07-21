@@ -83,7 +83,7 @@ class EmergencyController extends Controller
      */
     public function edit(Emergency $emergency)
     {
-        //
+        return view('emergencies.edit', compact('emergency'));
     }
 
     /**
@@ -95,7 +95,9 @@ class EmergencyController extends Controller
      */
     public function update(Request $request, Emergency $emergency)
     {
-        //
+        $emergency->update($request->all());
+
+        return redirect()->route('emergency.index')->with('message', 'Emergency updated successfully');
     }
 
     /**
@@ -107,6 +109,7 @@ class EmergencyController extends Controller
     public function destroy(Emergency $emergency)
     {
         $emergency->delete();
+
         return redirect()->route('emergency.index')->with('message', 'Emergency deleted successfully');
     }
 

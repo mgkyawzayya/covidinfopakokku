@@ -86,9 +86,15 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, User $user)
     {
-        //
+        if ($request->password) {
+            $user->update(['name' => $request->name, 'email' => $request->email, 'password' => Hash::make($request->password)]);
+        } else {
+            $user->update($request->all());
+        }
+
+        return redirect()->route('user.index')->with('message', 'User updated successfully');
     }
 
     /**

@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use App\Donation;
 use App\Oxygen;
 use App\Volunteer;
+use Illuminate\Support\Facades\Gate;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -38,9 +41,14 @@ class HomeController extends Controller
      */
     public function home()
     {
-        $volunteers = Volunteer::count();
-        $oxygens = Oxygen::count();
-        $donations = Donation::count();
-        return view('home', compact('volunteers', 'oxygens', 'donations'));
+        if (Gate::allows('isAdmin')) {
+            $volunteers = Volunteer::count();
+            $oxygens = Oxygen::count();
+            $donations = Donation::count();
+            return view('home', compact('volunteers', 'oxygens', 'donations'));
+        } else {
+            $posts = Blog::count();
+            return view('home', compact('posts'));
+        }
     }
 }

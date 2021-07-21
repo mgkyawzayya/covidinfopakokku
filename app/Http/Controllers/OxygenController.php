@@ -46,6 +46,9 @@ class OxygenController extends Controller
             $oxygen = new Oxygen();
             $oxygen->name = $request->name;
             $oxygen->firstphone = $request->firstphone;
+            if ($oxygen->descriptions) {
+                $oxygen->descriptions = $request->descriptions;
+            }
 
             if ($request->secondphone) {
                 $oxygen->secondphone = $request->secondphone;
