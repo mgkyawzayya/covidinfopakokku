@@ -10,10 +10,10 @@
     <div class="bg-gray-100">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase pyidaungsu">ပင်မစာမျက်နှာ
+                <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase pyidaungsu mb-2">ပင်မစာမျက်နှာ
                 </h2>
                 <p
-                    class="mt-1 text-xl font-extrabold text-gray-900 sm:text-1xl sm:tracking-tight lg:text-2xl pyidaungsu">
+                    class="mt-3 text-xl font-extrabold text-gray-900 sm:text-1xl sm:tracking-tight lg:text-2xl pyidaungsu">
                     အောက်ဆီဂျင် ရရှိနိုင်သည့်နေရာများ</p>
                 {{-- <p class="max-w-xl mt-5 mx-auto text-xl text-gray-500">Start building for free, then add a site plan
                     to go
