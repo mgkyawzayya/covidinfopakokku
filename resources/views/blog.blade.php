@@ -35,7 +35,7 @@
                                     @endif
                                 </span>
                             </p>
-                            <a href="blogs/{{ $blog->slug }}" class="block mt-2">
+                            <a href="posts/{{ $blog->slug }}" class="block mt-2">
                                 <p class="text-xl font-semibold text-gray-900 pyidaungsu">
                                     {{ Str::words($blog->title, 10, '.....') }}
                                 </p>

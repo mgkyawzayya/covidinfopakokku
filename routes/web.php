@@ -25,5 +25,5 @@ Route::middleware(['auth' ])->group(function () {
 Route::get('emergency-list', 'EmergencyController@home')->name('emergency-list');
 Route::get('volunteer-list', 'VolunteerController@home')->name('volunteer-list');
 Route::get('donation-list', 'DonationController@home')->name('donation-list');
-Route::get('blog-list', 'BlogController@home')->name('blog-list');
-Route::get('blogs/{slug}', 'BlogController@details')->name('blogs');
+Route::get('posts', 'BlogController@home')->name('posts');
+Route::get('posts/{slug}', 'BlogController@details');
