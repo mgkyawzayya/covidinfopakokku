@@ -53,10 +53,10 @@
                                 class="{{ Request::path() == 'posts' || Request::is('posts/*') ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                 သတင်းများ
                             </a>
-                            <a href="#"
+                            {{-- <a href="#"
                                 class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                 About
-                            </a>
+                            </a> --}}
                         </div>
                     </div>
                     <div class="-mr-2 flex items-center sm:hidden">
@@ -99,8 +99,8 @@ Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" cl
                         class="{{ Request::path() == 'donation-list' ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">လှူဒါန်းရန်</a>
                     <a href="{{ route('posts') }}"
                         class="{{ Request::path() == 'posts' ||Request::is('posts/*') ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">သတင်းများ</a>
-                    <a href="#"
-                        class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">About</a>
+                    {{-- <a href="#"
+                        class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">About</a> --}}
                 </div>
             </div>
         </nav>
