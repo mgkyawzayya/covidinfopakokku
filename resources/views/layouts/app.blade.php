@@ -50,7 +50,7 @@
                                 လှူဒါန်းရန်
                             </a>
                             <a href="{{ route('blog-list') }}"
-                                class="{{ Request::path() == 'blog-list' || Request::is('blog-details/*') ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                class="{{ Request::path() == 'blog-list' || Request::is('blogs/*') ? 'border-indigo-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}} inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
                                 သတင်းများ
                             </a>
                             <a href="#"
@@ -98,7 +98,7 @@ Heroicon name: outline/menu" x-state:on="Menu open" x-state:off="Menu closed" cl
                     <a href="{{ route('donation-list') }}"
                         class="{{ Request::path() == 'donation-list' ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">လှူဒါန်းရန်</a>
                     <a href="{{ route('blog-list') }}"
-                        class="{{ Request::path() == 'blog-list' ||Request::is('blog-details/*') ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">သတင်းများ</a>
+                        class="{{ Request::path() == 'blog-list' ||Request::is('blogs/*') ? 'bg-indigo-50 border-indigo-500 text-indigo-700' : 'border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700' }} block pl-3 pr-4 py-2 border-l-4 text-base font-medium">သတင်းများ</a>
                     <a href="#"
                         class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">About</a>
                 </div>
