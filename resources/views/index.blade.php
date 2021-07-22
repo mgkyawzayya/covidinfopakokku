@@ -10,11 +10,10 @@
     <div class="bg-gray-100">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase pyidaungsu mb-2">
+                <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase mb-2">
                     ပင်မစာမျက်နှာ
                 </h2>
-                <p
-                    class="mt-3 text-xl font-extrabold text-gray-900 sm:text-1xl pyidaungsu sm:tracking-tight lg:text-2xl">
+                <p class="mt-3 text-xl font-extrabold text-gray-900 sm:text-1xl  sm:tracking-tight lg:text-2xl">
                     အောက်ဆီဂျင် ရရှိနိုင်သည့်နေရာများ</p>
                 {{-- <p class="max-w-xl mt-5 mx-auto text-xl text-gray-500">Start building for free, then add a site plan
                     to go
@@ -37,13 +36,13 @@
                             class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Available</span>
                         @endif
                         <div class="flex items-center space-x-3 pt-2">
-                            <h3 class="text-gray-900 text-sm font-medium break-words pyidaungsu ">{{ $oxygen->name }}
+                            <h3 class="text-gray-900 text-sm font-medium break-words  ">{{ $oxygen->name }}
                             </h3>
                         </div>
-                        <p class="mt-1 pb-3 text-gray-600 text-sm break-words pyidaungsu">{{ $oxygen->address }}</p>
+                        <p class="mt-1 pb-3 text-gray-600 text-sm break-words ">{{ $oxygen->address }}</p>
                         @if ($oxygen->descriptions)
                         <hr>
-                        <p class="pt-2 text-gray-500 text-sm break-words pyidaungsu">{{ $oxygen->descriptions }}</p>
+                        <p class="pt-2 text-gray-500 text-sm break-words ">{{ $oxygen->descriptions }}</p>
                         @endif
                     </div>
                 </div>
