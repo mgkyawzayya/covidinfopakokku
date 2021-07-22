@@ -29,7 +29,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $oxygens = Oxygen::all();
+        $oxygens = Oxygen::orderBy('status', 'desc')->get();
 
         return view('index', compact('oxygens'));
     }
