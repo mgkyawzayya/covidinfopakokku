@@ -10,7 +10,7 @@
     <div class="bg-gray-100">
         <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase">ပရဟိတအဖွဲ့အစည်းများ</h2>
+                <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase pyidaungsu">ပရဟိတအဖွဲ့အစည်းများ</h2>
                 {{-- <p class="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-6xl">
                     ပရဟိတအဖွဲ့အစည်းများ</p> --}}
                 {{-- <p class="max-w-xl mt-5 mx-auto text-xl text-gray-500">Start building for free, then add a site plan
@@ -26,8 +26,8 @@
                 <div class="flex-1 flex flex-col p-8">
                     <img class="w-48 h-48 flex-shrink-0 mx-auto bg-black rounded-full"
                         src="{{ asset($emergency->path) }}" alt="">
-                    <h3 class="mt-6 text-gray-900 text-sm font-medium break-words ">{{ $emergency->name }}</h3>
-                    <p class="mt-1 text-gray-500 text-sm break-words ">{{ $emergency->address }}</p>
+                    <h3 class="mt-6 text-gray-900 text-sm font-medium break-words pyidaungsu">{{ $emergency->name }}</h3>
+                    <p class="mt-1 text-gray-500 text-sm break-words pyidaungsu">{{ $emergency->address }}</p>
                 </div>
                 <div>
                     <div class="-mt-px flex divide-x divide-gray-200">
