@@ -41,7 +41,8 @@
                         </div>
                         <p class="mt-1 pb-3 text-gray-600 text-sm break-words ">{{ $oxygen->address }}</p>
                         @if ($oxygen->descriptions)
-                        <div class="-mt-px divide-dotted divide-gray-200">
+                        <hr class="lg:hidden">
+                        <div class="-mt-px divide-dotted divide-gray-200 lg:hidden">
                             <p class="pt-2 text-gray-500 text-sm break-words ">{{ $oxygen->descriptions }}</p>
                         </div>
                         @endif

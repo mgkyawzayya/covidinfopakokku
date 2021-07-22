@@ -45,10 +45,10 @@
                                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                         Status
                                                     </th>
-                                                    <th scope="col"
+                                                    {{-- <th scope="col"
                                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                         Address
-                                                    </th>
+                                                    </th> --}}
                                                     <th scope="col" class="relative px-6 py-3">
                                                         <span class="sr-only">Edit</span>
                                                     </th>
@@ -65,17 +65,20 @@
                                                         class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                                         {{ $oxygen->name }}
                                                     </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                    <td
+                                                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 ">
                                                         {{ $oxygen->firstphone }} @if ($oxygen->secondphone)
                                                         {{ ', '. $oxygen->secondphone }}
                                                         @endif
                                                     </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                    <td
+                                                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 md:hidden">
                                                         {{ $oxygen->status }}
                                                     </td>
-                                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                    {{-- <td
+                                                        class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 truncate">
                                                         {{ $oxygen->address}}
-                                                    </td>
+                                                    </td> --}}
                                                     <td
                                                         class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex grid-cols-2">
                                                         <a href="{{ url('oxygen/'. $oxygen->id . '/edit') }}"

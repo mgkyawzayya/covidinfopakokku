@@ -30,6 +30,8 @@
                                                 value="knowledge">ဗဟုသုတ</option>
                                             <option {{ $blog->category == 'new' ? 'selected' : '' }} value="new">
                                                 သတင်း</option>
+                                            <option {{ $blog->category == 'oxygen' ? 'selected' : '' }} value="oxygen">
+                                                အောက်ဆီဂျင်</option>
                                         </select>
                                     </div>
                                 </div>

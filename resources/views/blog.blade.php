@@ -31,6 +31,8 @@
                                     ဗဟုသုတ
                                     @elseif($blog->category === 'new')
                                     သတင်း
+                                    @elseif($blog->category === 'oxygen')
+                                    အောက်ဆီဂျင်
                                     @else
                                     @endif
                                 </span>
