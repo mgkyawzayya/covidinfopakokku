@@ -26,7 +26,7 @@
             @foreach ($oxygens as $oxygen)
             <li class="col-span-1 bg-white rounded-lg shadow divide-y divide-gray-200">
                 <div class="w-full flex items-center justify-between p-6 space-x-6">
-                    <div class="flex-1 truncate">
+                    <div class="flex-1 lg:truncate">
                         @if ($oxygen->status == 0)
                         <span
                             class="flex-shrink-0 inline-block px-2 py-0.5 text-red-800 text-xs font-medium bg-red-100 rounded-full">Not
