@@ -10,7 +10,7 @@
     <div class="bg-gray-100">
         <div class="max-w-7xl mx-auto py-10 px-4 sm:py-24 sm:px-6 lg:px-8">
             <div class="text-center">
-                <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase pyidaungsu">သတင်းများ</h2>
+                <h2 class="text-base font-semibold text-indigo-600 tracking-wide uppercase ">သတင်းများ</h2>
             </div>
         </div>
     </div>
