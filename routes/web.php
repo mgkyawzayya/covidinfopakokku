@@ -22,6 +22,7 @@ Route::middleware(['auth' ])->group(function () {
     Route::resource('emergency', 'EmergencyController');
     Route::resource('blog', 'BlogController');
 });
+ROute::get('download', 'HomeController@download')->name('download');
 Route::get('emergency-list', 'EmergencyController@home')->name('emergency-list');
 Route::get('volunteer-list', 'VolunteerController@home')->name('volunteer-list');
 Route::get('donation-list', 'DonationController@home')->name('donation-list');

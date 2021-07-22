@@ -51,4 +51,13 @@ class HomeController extends Controller
             return view('home', compact('posts'));
         }
     }
+
+    public function download()
+    {
+        $file = public_path()."/downloads/CovidInfoPakokku.apk";
+        return response()->file($file, [
+        'Content-Type'=>'application/vnd.android.package-archive',
+        'Content-Disposition'=> 'attachment; filename="CovidInfoPakokku.apk"',
+]) ;
+    }
 }
