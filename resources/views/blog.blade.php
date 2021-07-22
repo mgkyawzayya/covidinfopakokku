@@ -26,7 +26,7 @@
                         <div class="flex-1">
                             <p class="text-sm font-medium text-indigo-600">
                                 <span
-                                    class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 pyidaungsu">
+                                    class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium bg-indigo-100 text-indigo-800 ">
                                     @if ($blog->category === 'knowledge')
                                     ဗဟုသုတ
                                     @elseif($blog->category === 'new')
@@ -36,11 +36,11 @@
                                 </span>
                             </p>
                             <a href="posts/{{ $blog->slug }}" class="block mt-2">
-                                <p class="text-xl font-semibold text-gray-900 pyidaungsu">
+                                <p class="text-xl font-semibold text-gray-900">
                                     {{ Str::words($blog->title, 10, '.....') }}
                                 </p>
                                 <p class="mt-3 text-base text-gray-500">
-                                    <div class="pyidaungsu">
+                                    <div>
                                         {!! Str::words(strip_tags($blog->descriptions), 20, '.....') !!}
                                     </div>
                                 </p>
