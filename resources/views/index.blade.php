@@ -37,13 +37,13 @@
                             class="flex-shrink-0 inline-block px-2 py-0.5 text-green-800 text-xs font-medium bg-green-100 rounded-full">Available</span>
                         @endif
                         <div class="flex items-center space-x-3 pt-2">
-                            <h3 class="text-gray-900 text-base font-medium break-words pyidaungsu">{{ $oxygen->name }}
+                            <h3 class="text-gray-900 text-sm font-medium break-words ">{{ $oxygen->name }}
                             </h3>
                         </div>
-                        <p class="mt-1 pb-3 text-gray-600 text-base break-words pyidaungsu">{{ $oxygen->address }}</p>
+                        <p class="mt-1 pb-3 text-gray-600 text-sm break-words ">{{ $oxygen->address }}</p>
                         @if ($oxygen->descriptions)
                         <hr>
-                        <p class="pt-2 text-gray-500 text-sm break-words pyidaungsu">{{ $oxygen->descriptions }}</p>
+                        <p class="pt-2 text-gray-500 text-sm break-words ">{{ $oxygen->descriptions }}</p>
                         @endif
                     </div>
                 </div>
