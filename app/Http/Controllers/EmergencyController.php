@@ -41,7 +41,7 @@ class EmergencyController extends Controller
             'name' => 'required',
             'firstphone' => 'required',
             'address' => 'required',
-            'image' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            // 'image' => 'required|mimes:jpg,png,jpeg,gif,svg|max:2048',
         ]);
 
         $volunteer = new Emergency();
@@ -51,6 +51,8 @@ class EmergencyController extends Controller
             $path = $request->file('image')->storeAs('uploads', $imageName, 'public');
 
             $volunteer->path = '/storage/'. $path;
+        } else {
+            $volunteer->path = null;
         }
 
         $volunteer->name = $request->name;
@@ -115,7 +117,7 @@ class EmergencyController extends Controller
 
     public function home()
     {
-        $emergencies = Emergency::all();
+        $emergencies = Emergency::orderBy('id', 'DESC')->get();
 
         return view('emergency', compact('emergencies'));
     }

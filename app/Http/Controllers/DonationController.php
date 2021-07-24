@@ -104,7 +104,7 @@ class DonationController extends Controller
 
     public function home()
     {
-        $donations = Donation::all();
+        $donations = Donation::orderBy('id', 'DESC')->get();
         return view('donation', compact('donations'));
     }
 }

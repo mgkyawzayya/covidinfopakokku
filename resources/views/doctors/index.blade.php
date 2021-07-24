@@ -8,11 +8,11 @@
                     <div class="-ml-4 -mt-2 flex items-center justify-between flex-wrap sm:flex-nowrap">
                         <div class="ml-4 mt-2">
                             <h3 class="text-lg leading-6 font-medium text-gray-900">
-                                Donations List
+                                Doctors List
                             </h3>
                         </div>
                         <div class="ml-4 mt-2 flex-shrink-0">
-                            <a href="{{ url('donation/create') }}">
+                            <a href="{{ url('doctor/create') }}">
                                 <button type="button"
                                     class="relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                                     Add
@@ -51,7 +51,7 @@
                                                 </tr>
                                             </thead>
                                             <tbody class="bg-white divide-y divide-gray-100">
-                                                @foreach ($donations as $donation)
+                                                @foreach ($doctors as $doctor)
                                                 <tr>
                                                     <td
                                                         class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
@@ -59,19 +59,19 @@
                                                     </td>
                                                     <td
                                                         class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                                        {{ $donation->name }}
+                                                        {{ $doctor->name }}
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                        {{ $donation->firstphone }} @if ($donation->secondphone)
-                                                        {{ ', '.$donation->secondphone }}
+                                                        {{ $doctor->firstphone }} @if ($doctor->secondphone)
+                                                        {{ ', '.$doctor->secondphone }}
                                                         @endif
                                                     </td>
                                                     <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                        {{ $donation->address }}
+                                                        {{ $doctor->address }}
                                                     </td>
                                                     <td
                                                         class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium flex grid-cols-2">
-                                                        <a href="{{ url('donation/'. $donation->id . '/edit') }}"
+                                                        <a href="{{ url('doctor/'. $doctor->id . '/edit') }}"
                                                             class="px-3 ">
                                                             <svg class="w-6 h-6 text-indigo-600" fill="none"
                                                                 stroke="currentColor" viewBox="0 0 24 24"
@@ -82,7 +82,7 @@
                                                                 </path>
                                                             </svg>
                                                         </a>
-                                                        <form action="{{ route('donation.destroy', $donation->id) }}"
+                                                        <form action="{{ route('doctor.destroy', $doctor->id) }}"
                                                             class="px-3" method="POST">
                                                             @csrf
                                                             @method('DELETE')
