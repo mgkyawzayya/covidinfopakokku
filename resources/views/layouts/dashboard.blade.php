@@ -91,7 +91,6 @@
                                 </svg>
                                 Dashboard
                             </a>
-                            @can('isAdmin')
                             <a href={{ route('user.index') }}#"
                                 class="{{ Request::is('user')  || Request::is('user/*') ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}} group flex items-center px-2 py-2 text-base font-medium rounded-md"
                                 x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
@@ -169,7 +168,6 @@
                                 </svg>
                                 Oxygens
                             </a>
-                            @endcan
                             <a href="{{ route('blog.index') }}"
                                 class="{{ Request::is('blog') || Request::is('blog/*')  ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'}} group flex items-center px-2 py-2 text-base font-medium rounded-md"
                                 x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
@@ -232,7 +230,6 @@
                                     </svg>
                                     Dashboard
                                 </a>
-                                @can('isAdmin')
                                 <a href="{{ route('user.index') }}"
                                     class="{{ Request::is('user') || Request::is('user/*') ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'  }}group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                                     x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
@@ -311,8 +308,6 @@
                                     </svg>
                                     Oxygens
                                 </a>
-                                @endcan
-                                @can('isEditor')
                                 <a href="{{  route('blog.index') }}"
                                     class="{{ Request::is('blog') || Request::is('blog/*')  ? 'bg-gray-100 text-gray-900' : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'  }} group flex items-center px-2 py-2 text-sm font-medium rounded-md"
                                     x-state-description="undefined: &quot;bg-gray-100 text-gray-900&quot;, undefined: &quot;text-gray-600 hover:bg-gray-50 hover:text-gray-900&quot;">
@@ -327,7 +322,6 @@
                                     </svg>
                                     Blogs
                                 </a>
-                                @endcan
                                 <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                             document.getElementById('logout-form').submit();"
                                     class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
