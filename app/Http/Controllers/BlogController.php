@@ -43,7 +43,7 @@ class BlogController extends Controller
         $validation = $request->validate([
             'title' => 'required',
             'category' => 'required',
-            'description' => 'required'
+            'descriptions' => 'required'
         ]);
 
         $blog = new Blog();
